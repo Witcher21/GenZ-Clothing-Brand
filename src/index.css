@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 5%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 82 85% 50%;
+    --primary-foreground: 0 0% 5%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 55%;
+
+    --accent: 82 85% 50%;
+    --accent-foreground: 0 0% 5%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 82 85% 50%;
+
+    --radius: 0px;
+
+    --font-display: 'Outfit', sans-serif;
+    --font-body: 'Space Grotesk', sans-serif;
+
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 82 85% 50%;
+    --sidebar-primary-foreground: 0 0% 5%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 18%;
+    --sidebar-ring: 82 85% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(82 85% 50%), hsl(60 90% 60%));
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 40px hsl(82 85% 50% / 0.15);
+  }
+
+  .border-glow {
+    border-color: hsl(82 85% 50% / 0.3);
+  }
+}
+
+/* ============================================ */
+/* PREMIUM BUTTON ANIMATIONS                    */
+/* ============================================ */
+
+/* Primary CTA button - Glow pulse + ripple */
+.btn-premium {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-premium::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.btn-premium:hover::before {
+  transform: translateX(100%);
+}
+
+.btn-premium::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease, opacity 0.6s ease;
+  opacity: 0;
+}
+
+.btn-premium:active::after {
+  width: 300px;
+  height: 300px;
+  opacity: 0;
+  transition: width 0s, height 0s, opacity 0.6s ease;
+}
+
+.btn-premium:hover {
+  box-shadow: 0 0 20px hsl(82 85% 50% / 0.3), 0 0 60px hsl(82 85% 50% / 0.1);
+  transform: translateY(-2px);
+}
+
+.btn-premium:active {
+  transform: translateY(0px) scale(0.98);
+}
+
+/* Outline/Ghost button - border sweep */
+.btn-outline-premium {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: transparent;
+}
+
+.btn-outline-premium::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, hsl(82 85% 50%), hsl(60 90% 60%));
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-outline-premium:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.btn-outline-premium::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: hsl(82 85% 50% / 0.05);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn-outline-premium:hover::after {
+  opacity: 1;
+}
+
+.btn-outline-premium:hover {
+  border-color: hsl(82 85% 50% / 0.5);
+  color: hsl(82 85% 50%);
+  text-shadow: 0 0 20px hsl(82 85% 50% / 0.3);
+}
+
+.btn-outline-premium:active {
+  transform: scale(0.97);
+}
+
+/* Nav button - Magnetic hover */
+.btn-nav {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-nav::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: hsl(82 85% 50%);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(-50%);
+}
+
+.btn-nav:hover::after {
+  width: 100%;
+}
+
+.btn-nav:hover {
+  color: hsl(82 85% 50%);
+}
+
+/* Shop Now button - pulse glow */
+.btn-shop {
+  position: relative;
+  overflow: hidden;
+  animation: shopGlow 2s ease-in-out infinite;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-shop::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: shopShine 3s ease-in-out infinite;
+}
+
+.btn-shop:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 0 30px hsl(82 85% 50% / 0.4), 0 8px 32px hsl(82 85% 50% / 0.2);
+}
+
+.btn-shop:active {
+  transform: translateY(0) scale(0.98);
+}
+
+@keyframes shopGlow {
+  0%, 100% { box-shadow: 0 0 10px hsl(82 85% 50% / 0.2); }
+  50% { box-shadow: 0 0 20px hsl(82 85% 50% / 0.35); }
+}
+
+@keyframes shopShine {
+  0% { left: -100%; }
+  50%, 100% { left: 100%; }
+}
+
+/* Subscribe button */
+.btn-subscribe {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-subscribe::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, hsl(82 85% 50%), hsl(60 90% 60%), hsl(82 85% 50%));
+  background-size: 200% 200%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  animation: gradientShift 3s ease infinite;
+}
+
+.btn-subscribe:hover::before {
+  opacity: 1;
+}
+
+.btn-subscribe:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px hsl(82 85% 50% / 0.3);
+}
+
+.btn-subscribe:active {
+  transform: translateY(0) scale(0.97);
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Page transition */
+.page-enter {
+  animation: pageSlideIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes pageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(0 0% 5%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(0 0% 20%);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(82 85% 50% / 0.5);
+}
