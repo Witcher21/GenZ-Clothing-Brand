@@ -1,73 +1,75 @@
-# Welcome to your Lovable project
+# ⚡ GENZ - Premium Streetwear Movement
 
-## Project info
+![GENZ Banner](https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=2000&auto=format&fit=crop)
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## 🚀 Overview
+GENZ is a high-end, premium e-commerce experience designed for the fearless generation. This isn't just a clothing brand; it's a visual movement combining raw street culture with state-of-the-art web technology. Built with a focus on immersive 3D interactions, ultra-responsive design, and a dark, high-fidelity aesthetic.
 
-## How can I edit this code?
+**Live Demo:** [Experience GENZ](https://lovable.dev/projects/2150c9d2-c9d1-479e-881c-ef623a3b56ca)
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## ✨ Key Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+### 💎 Premium Visual Experience
+- **3D Interactive Cards**: Products come to life with dynamic 3D tilt effects using Framer Motion and custom CSS transformations.
+- **Glassmorphic UI**: A dark, sleek interface with backdrop blurs and subtle glow effects for a high-end editorial feel.
+- **Fluid Typography**: Dynamic heading scaling that maintains brand impact from massive desktop monitors down to mobile screens.
+- **Micro-animations**: Subtle interactions and entrance transitions that reward user engagement.
 
-Changes made via Lovable will be committed automatically to this repo.
+### 🛍️ Smart E-Commerce Logic
+- **Dynamic Category Filtering**: Seamlessly browse through Hoodies, T-Shirts, Accessories, and more with intelligent routing.
+- **Collection Showcases**: Dedicated layouts for "Essentials", "Neon Drop", and "Dark Mode" specialized drops.
+- **Unique Product Data**: Each item features high-resolution imagery, rich descriptions, and interactive selection states.
 
-**Use your preferred IDE**
+### 📱 Full Responsiveness
+- **Mobile-First Architecture**: Every component is hand-crafted to be fully functional and visually stunning on mobile devices.
+- **Adaptive Stacking**: Intelligent grid layouts that shift from 1 to 5 columns based on viewport width.
+- **Optimized Mobile UX**: Heavy desktop animations are conditionally disabled on touch devices to ensure a smooth, lag-free experience.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🛠️ Tech Stack
 
-Follow these steps:
+- **Core**: [React 18](https://reactjs.org/) + [Vite](https://vitejs.dev/)
+- **Logic**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Component System**: [shadcn/ui](https://ui.shadcn.com/)
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 🏗️ Getting Started
 
-# Step 3: Install the necessary dependencies.
-npm i
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or bun
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+### Installation
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Witcher21/GenZ-Clothing-Brand.git
+   ```
 
-**Edit a file directly in GitHub**
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+3. **Run development server**
+   ```bash
+   npm run dev
+   ```
 
-**Use GitHub Codespaces**
+---
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 👨‍💻 Author
+**Created by G.Nawod Sanjana**
 
-## What technologies are used for this project?
+Built with passion for high-end fashion and cutting-edge web development.
 
-This project is built with:
+---
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## 📝 License
+© 2026 GENZ. All rights reserved.
